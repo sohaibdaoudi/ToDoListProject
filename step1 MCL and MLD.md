@@ -1,8 +1,4 @@
-Here's the updated **MCD** and **MLD** with the addition of the `name` attribute for the **User** entity.
-
----
-
-### **Updated MCD (Modèle Conceptuel de Données)**
+### **MCD (Modèle Conceptuel de Données)**
 
 1. **User**
    - Attributes:
@@ -27,7 +23,7 @@ Here's the updated **MCD** and **MLD** with the addition of the `name` attribute
 
 ---
 
-### **Updated MLD (Modèle Logique de Données)**
+### **MLD (Modèle Logique de Données)**
 
 #### 1. **Users**
 | Column Name       | Data Type        | Constraints                 |
@@ -48,11 +44,3 @@ Here's the updated **MCD** and **MLD** with the addition of the `name` attribute
 | `due_date`        | DATE             | NULL                       |
 | `status`          | ENUM('Pending', 'Completed', 'Overdue') | DEFAULT 'Pending' |
 | `priority`        | ENUM('High', 'Medium', 'Low') | DEFAULT 'Medium' |
-
----
-
-### Updated Features:
-- The **User** table now includes a `name` column to store the user's full name.
-- This allows personalized interactions on the website (e.g., "Welcome, [Name]!").
-
-Would you like a visualization (ERD) or SQL code to create these tables?
