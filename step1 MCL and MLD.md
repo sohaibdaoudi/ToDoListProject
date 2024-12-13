@@ -1,74 +1,58 @@
-To design a **Model Conceptual Data (MCD)** and **Model Logical Data (MLD)** for your to-do list website, we can define the entities, attributes, and relationships in the MCD and then translate them into tables in the MLD.
+Here's the updated **MCD** and **MLD** with the addition of the `name` attribute for the **User** entity.
 
 ---
 
-### **MCD (Model Conceptual Data)**
+### **Updated MCD (Modèle Conceptuel de Données)**
 
-#### **Entities:**
-1. **User**:
+1. **User**
    - Attributes:
-     - User ID (Primary Key)
-     - Name
-     - Email (Unique)
-     - Password
+     - `id_user` (Primary Key, unique identifier)
+     - `name` (user's full name)
+     - `email` (unique)
+     - `password`
+     - `security_code` (for password recovery)
 
-2. **Task**:
+2. **Task**
    - Attributes:
-     - Task ID (Primary Key)
-     - Title
-     - Description
-     - Status (e.g., Pending, Completed)
-     - Due Date
-     - Created Date
+     - `id_task` (Primary Key, unique identifier)
+     - `title`
+     - `description`
+     - `due_date`
+     - `status` (e.g., Pending, Completed, Overdue)
+     - `priority` (e.g., High, Medium, Low)
 
-#### **Relationships:**
-1. **A User can have multiple Tasks** (One-to-Many relationship):
-   - A user is linked to their tasks.
-
----
-
-### **MLD (Model Logical Data)**
-
-#### **Tables:**
-1. **Users**:
-   ```sql
-   CREATE TABLE Users (
-       user_id INT AUTO_INCREMENT PRIMARY KEY,
-       name VARCHAR(100),
-       email VARCHAR(100) UNIQUE,
-       password VARCHAR(255)
-   );
-   ```
-
-2. **Tasks**:
-   ```sql
-   CREATE TABLE Tasks (
-       task_id INT AUTO_INCREMENT PRIMARY KEY,
-       user_id INT,
-       title VARCHAR(200),
-       description TEXT,
-       status ENUM('Pending', 'Completed') DEFAULT 'Pending',
-       due_date DATE,
-       created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-       FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
-   );
-   ```
+3. **Relationships**
+   - A `User` *can have* multiple `Tasks` (**1,N** cardinality).
+   - Each `Task` *belongs to* one `User` (**1,1** cardinality).
 
 ---
 
-### **Password Recovery Mechanism**
-- Add a column for a **password recovery token** and its expiration time in the `Users` table:
-  ```sql
-  ALTER TABLE Users 
-  ADD recovery_token VARCHAR(255),
-  ADD token_expiry DATETIME;
-  ```
+### **Updated MLD (Modèle Logique de Données)**
 
-When a user forgets their password:
-1. A unique token is generated and stored in `recovery_token`, with an expiry time set in `token_expiry`.
-2. An email is sent to the user with the token to reset their password.
-3. The token is validated when the user attempts to reset the password.
+#### 1. **Users**
+| Column Name       | Data Type        | Constraints                 |
+|--------------------|------------------|-----------------------------|
+| `id_user`         | INT (PK)         | AUTO_INCREMENT, NOT NULL   |
+| `name`            | VARCHAR(255)     | NOT NULL                   |
+| `email`           | VARCHAR(255)     | UNIQUE, NOT NULL           |
+| `password`        | VARCHAR(255)     | NOT NULL                   |
+| `security_code`   | VARCHAR(10)      | NOT NULL                   |
+
+#### 2. **Tasks**
+| Column Name       | Data Type        | Constraints                 |
+|--------------------|------------------|-----------------------------|
+| `id_task`         | INT (PK)         | AUTO_INCREMENT, NOT NULL   |
+| `id_user`         | INT (FK)         | REFERENCES Users(id_user)   |
+| `title`           | VARCHAR(255)     | NOT NULL                   |
+| `description`     | TEXT             | NULL                       |
+| `due_date`        | DATE             | NULL                       |
+| `status`          | ENUM('Pending', 'Completed', 'Overdue') | DEFAULT 'Pending' |
+| `priority`        | ENUM('High', 'Medium', 'Low') | DEFAULT 'Medium' |
 
 ---
 
-Would you like to include diagrams (e.g., ERD) or further expand on the design?
+### Updated Features:
+- The **User** table now includes a `name` column to store the user's full name.
+- This allows personalized interactions on the website (e.g., "Welcome, [Name]!").
+
+Would you like a visualization (ERD) or SQL code to create these tables?
