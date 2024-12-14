@@ -6,8 +6,10 @@ if(isset($_POST['signUp'])){
     $firstName=$_POST['fName'];
     $lastName=$_POST['lName'];
     $email=$_POST['email'];
+    $key = '0123456789abcdef';
+    $iv = '1234567890abcdef'; 
     $password=$_POST['password'];
-    $password=md5($password);
+    $password=openssl_encrypt($password, 'aes-128-cbc', $key, 0, $iv); // just an for example we used this 2-way function (encrepy-decrept), for the password we need to use a 1 way function like md5()
     $security_code = $_POST['scode'];
 
      $checkEmail="SELECT * From users where email='$email'";
@@ -60,7 +62,9 @@ if (isset($_POST['recPswd'])) {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $password = $row['password'];
+        $key = '0123456789abcdef';
+        $iv = '1234567890abcdef'; 
+        $password = openssl_decrypt($row['password'], 'aes-128-cbc', $key, 0, $iv);
 
         
         echo "Your password is: $password";
