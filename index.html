@@ -33,6 +33,11 @@
             <i class="fa fa-lock"></i>
             <input type="password" name="password" id="password" placeholder="Password" required>
         </div>
+        <div class="input-group">
+          <i class="fa-solid fa-check"></i>
+          <input type="text" name="scode" id="scode" placeholder="Security Code" pattern="\d{4}" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+          <p id="mssg">Security code is required to recover the password !</p>
+        </div>
        <input type="submit" class="btn" value="Sign Up" name="signUp">
       </form>
       <div class="links">
@@ -64,6 +69,8 @@
         </div>
       </div>
 
+
+
       <div class="container" id="recover">
         <h1 class="form-title">Rocover the Password</h1>
         <p id="mssg">The default scurity code is 0000</p>
@@ -87,11 +94,8 @@
 
         </div>
         
-       </div>
+      </div>
 
-
-
-    
       <script src="script.js"></script>
 </body>
 </html>
