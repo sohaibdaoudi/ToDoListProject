@@ -7,13 +7,22 @@
 body{
     background-color: #F2F6FF;
 }
+
+#logo{
+    width: 7em;
+    display: block;
+    text-align: center;
+    margin:auto;
+    margin-top: 50px;
+}
 .container{
     background:white;
     width:450px;
     padding:1.5rem;
-    margin:50px auto;
+    margin:10px auto;
     border-radius:10px;
     box-shadow: 0.5px 0.5px 5px rgba(0,0, 0, 0.2);
+
 }
 
 .container #mssg{
@@ -24,6 +33,8 @@ body{
     color:rgba(0,0, 0, 0.4) ;
     font-weight: 390;
 }
+
+
 
 form{
     margin:0 2rem;
@@ -100,7 +111,7 @@ input::placeholder{
     transition:0.9s;
 }
 .btn:hover{
-    background:#176B87;
+    background:#1a57ad;
 }
 
 
