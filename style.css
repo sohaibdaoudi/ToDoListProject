@@ -134,3 +134,7 @@ button:hover{
     color:blue;
     cursor: pointer;
 }
+
+#recover{
+    display: none;
+}
