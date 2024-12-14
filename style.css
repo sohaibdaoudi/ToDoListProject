@@ -8,10 +8,9 @@ body{
     background-color: #F2F6FF;
 }
 
-#logo{
+img#logo{
     width: 7em;
     display: block;
-    background-color:red;
     margin:auto;
     margin-top: 50px;
 }
