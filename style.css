@@ -8,12 +8,13 @@ body{
     background-color: #F2F6FF;
 }
 
-img#logo{
+.logo{
     width: 7em;
     display: block;
     margin:auto;
     margin-top: 50px;
 }
+
 .container{
     background:white;
     width:450px;
