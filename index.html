@@ -63,6 +63,35 @@
           <button id="signUpButton">Sign Up</button>
         </div>
       </div>
+
+      <div class="container" id="recover">
+        <h1 class="form-title">Rocover the Password</h1>
+        <p id="mssg">The default scurity code is 0000</p>
+        <form method="post" action="register.php">
+          <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="email" id="email" placeholder="Email" required>
+          </div>
+          <div class="input-group">
+            <i class="fa-solid fa-check"></i>
+            <input type="text" name="scode" id="scode" placeholder="Security Code" pattern="\d{4}" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+          </div>
+
+          <input type="submit" class="btn" value="Recover Password" name="recPswd">
+
+        </form>
+
+        <div class="links">
+          <p>You found the Password? </p>
+          <button  id="" onclick="document.getElementById('recover').style.display='none'; document.getElementById('signIn').style.display='block';">Sign In</button>
+
+        </div>
+        
+       </div>
+
+
+
+    
       <script src="script.js"></script>
 </body>
 </html>
