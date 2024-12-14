@@ -35,8 +35,8 @@
         </div>
         <div class="input-group">
           <i class="fa-solid fa-check"></i>
-          <input type="text" name="scode" id="scode" placeholder="Security Code" pattern="\d{4}" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-          <p id="mssg">Security code is required to recover the password !</p>
+          <input type="text" name="scode" id="scode" placeholder="Security Code" pattern="\d{4}" maxlength="4" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+          <p id="mssg">Security code is required to recover the password ! <br> Please try not to lose it!</p>
         </div>
        <input type="submit" class="btn" value="Sign Up" name="signUp">
       </form>
@@ -73,7 +73,7 @@
 
       <div class="container" id="recover">
         <h1 class="form-title">Rocover the Password</h1>
-        <p id="mssg">The default scurity code is 0000</p>
+        <p id="mssg">If you don't remember the security code, contact our support!</p>
         <form method="post" action="register.php">
           <div class="input-group">
               <i class="fas fa-envelope"></i>
@@ -81,7 +81,7 @@
           </div>
           <div class="input-group">
             <i class="fa-solid fa-check"></i>
-            <input type="text" name="scode" id="scode" placeholder="Security Code" pattern="\d{4}" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+            <input type="text" name="scode" id="scode" placeholder="Security Code" pattern="\d{4}" maxlength="4" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
           </div>
 
           <input type="submit" class="btn" value="Recover Password" name="recPswd">
