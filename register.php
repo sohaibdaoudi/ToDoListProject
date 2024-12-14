@@ -8,6 +8,7 @@ if(isset($_POST['signUp'])){
     $email=$_POST['email'];
     $password=$_POST['password'];
     $password=md5($password);
+    $security_code = $_POST['scode'];
 
      $checkEmail="SELECT * From users where email='$email'";
      $result=$conn->query($checkEmail);
@@ -48,6 +49,7 @@ if(isset($_POST['signIn'])){
 
 }
 
+
 if (isset($_POST['recPswd'])) {
     $email = $_POST['email'];
     $scode = $_POST['scode'];
@@ -66,4 +68,5 @@ if (isset($_POST['recPswd'])) {
         echo "Incorrect email or security code.";
     }
 }
+
 ?>
