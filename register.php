@@ -34,7 +34,9 @@ if(isset($_POST['signUp'])){
 if(isset($_POST['signIn'])){
    $email=$_POST['email'];
    $password=$_POST['password'];
-   $password=md5($password) ;
+    $key = '0123456789abcdef';
+    $iv = '1234567890abcdef'; 
+    $password=openssl_encrypt($password, 'aes-128-cbc', $key, 0, $iv);
    
    $sql="SELECT * FROM users WHERE email='$email' and password='$password'";
    $result=$conn->query($sql);
