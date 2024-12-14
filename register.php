@@ -47,4 +47,23 @@ if(isset($_POST['signIn'])){
    }
 
 }
+
+if (isset($_POST['recPswd'])) {
+    $email = $_POST['email'];
+    $scode = $_POST['scode'];
+
+    
+    $sql = "SELECT * FROM users WHERE email='$email' AND security_code='$scode'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $password = $row['password'];
+
+        
+        echo "Your password is: $password";
+    } else {
+        echo "Incorrect email or security code.";
+    }
+}
 ?>
