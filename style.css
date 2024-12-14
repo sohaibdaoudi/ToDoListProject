@@ -11,7 +11,7 @@ body{
 #logo{
     width: 7em;
     display: block;
-    text-align: center;
+    background-color:red;
     margin:auto;
     margin-top: 50px;
 }
