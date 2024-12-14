@@ -1,0 +1,125 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Roboto",Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #F2F6FF;
+}
+.container{
+    background:white;
+    width:450px;
+    padding:1.5rem;
+    margin:50px auto;
+    border-radius:10px;
+    box-shadow: 0.5px 0.5px 5px rgba(0,0, 0, 0.2);
+}
+
+.container #mssg{
+    text-align: center;
+    margin: 0;
+    font-size:small;
+    margin-bottom: 2rem;
+    color:rgba(0,0, 0, 0.4) ;
+    font-weight: 390;
+}
+
+form{
+    margin:0 2rem;
+}
+.form-title{
+    font-size:1.5rem;
+    font-weight:bold;
+    text-align:center;
+    padding:1.3rem;
+    padding-bottom: 0.4rem;
+}
+
+.register{
+    margin-bottom: 1rem;
+}
+
+input{
+    color:inherit;
+    width:100%;
+    background-color:transparent;
+    border:1px solid rgba(0,0, 0, 0.1);
+    border-radius: 3px;
+    padding:0.5rem;
+    padding-left: 2.2rem;
+    font-size:15px;
+    margin-bottom: 0.5rem;
+}
+.input-group{
+    padding:1% 0;
+    position:relative;
+
+}
+.input-group i{
+    position:absolute;
+    color:#267FFF;
+    top: 0.79em;
+    left: 0.7em;
+}
+
+input:focus{
+    background-color: transparent;
+    outline:transparent;
+    border:1px solid rgba(0,0, 0, 0.3);
+}
+
+input::placeholder{
+    color:rgba(0,0, 0, 0.45);
+}
+
+.recover{
+    text-align:right;
+    font-size:1rem;
+    margin-bottom:1rem;
+
+}
+.recover a{
+    text-decoration:none;
+    color: #267FFF;
+}
+.recover a:hover{
+    color:blue;
+    text-decoration:underline;
+}
+.btn{
+    font-size:1.1rem;
+    padding:8px 0;
+    border-radius:5px;
+    outline:none;
+    border:none;
+    width:100%;
+    background:#267FFF;
+    color:white;
+    cursor:pointer;
+    transition:0.9s;
+}
+.btn:hover{
+    background:#176B87;
+}
+
+
+.links{
+    display:flex;
+    justify-content:space-around;
+    padding:0 4rem;
+    margin-top:0.9rem;
+    font-weight:bold;
+}
+button{
+    color:#267FFF;
+    border:none;
+    background-color:transparent;
+    font-size:1rem;
+    font-weight:bold;
+}
+button:hover{
+    text-decoration:underline;
+    color:blue;
+    cursor: pointer;
+}
