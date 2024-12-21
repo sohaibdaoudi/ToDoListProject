@@ -15,7 +15,7 @@ $email = $_SESSION['email'];
 <head>
 	<meta charset="UTF-8">
 	<title>Home page</title>
-	<link rel="stylesheet" href="style_homepage.css">
+	<link rel="stylesheet" href="style_for_homepage.css">
 
       <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
