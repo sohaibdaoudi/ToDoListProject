@@ -135,6 +135,6 @@ button:hover{
     cursor: pointer;
 }
 
-#recover, , #signup{
+#recover, #signup{
     display: none;
 }
