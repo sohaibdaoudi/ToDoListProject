@@ -15,7 +15,10 @@ if(isset($_POST['signUp'])){
      $checkEmail="SELECT * From users where email='$email'";
      $result=$conn->query($checkEmail);
      if($result->num_rows>0){
-        echo "Email Address Already Exists !";
+        echo "<script>
+                alert('Email Address Already Exists ! Please Sign in!');
+                window.location.href = 'index.html#signIn';
+        </script>";
      }
      else{
         $insertQuery="INSERT INTO users(firstName,lastName,email,password,security_code)
@@ -48,8 +51,23 @@ if(isset($_POST['signIn'])){
     exit();
    }
    else{
-    echo "Not Found, Incorrect Email or Password";
-   }
+        $sql1="SELECT * FROM users WHERE email='$email'";
+        $result1=$conn->query($sql1);
+        if($result1->num_rows<=0){
+            echo "<script>
+                alert('Email Address Not Found or Incorrect !');
+                window.location.href = 'index.html#signIn';
+            </script>";
+        } else {
+            echo "<script>
+                alert('Incorrect Password !');
+                window.location.href = 'index.html#signIn';
+            </script>";
+
+        }
+
+        }
+
 
 }
 
@@ -69,10 +87,28 @@ if (isset($_POST['recPswd'])) {
         $password = openssl_decrypt($row['password'], 'aes-128-cbc', $key, 0, $iv);
 
         
-        echo "Your password is: $password";
+        echo "<script>
+                alert('Your password is: $password');
+                window.location.href = 'index.html#recover';
+            </script>";
     } else {
-        echo "Incorrect email or security code.";
-    }
+        $sql1="SELECT * FROM users WHERE email='$email'";
+        $result1=$conn->query($sql1);
+        if($result1->num_rows<=0){
+            echo "<script>
+                alert('Email Address Not Found or Incorrect  !');
+                window.location.href = 'index.html#recover';
+            </script>";
+        } else {
+            echo "<script>
+                alert('Incorrect Security Code ! Please try again !');
+                window.location.href = 'index.html#recover';
+            </script>";
+
+        }
+
+        }
+     
 }
 
 ?>
