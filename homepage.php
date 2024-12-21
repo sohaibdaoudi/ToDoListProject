@@ -38,14 +38,23 @@ $email = $_SESSION['email'];
         <img src="images/LOGO.png">
         <p>logo</p>
     </div>
-      <ul>
+     <ul>
         <p>Username</p>
-        <li><a href="#">
-          <i class="fas fa-user"></i>
-          </a></li>
-          <li><a href="#">
-          <i class="fas fa-bell"></i>
-          </a></li>
+        <li>
+          <a href="#">
+            <i class="fas fa-user"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-bell"></i>
+          </a>
+        </li>
+        <li>
+          <a href="logout.php">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
