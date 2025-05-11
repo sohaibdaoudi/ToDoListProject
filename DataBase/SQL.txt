@@ -1,0 +1,17 @@
+CREATE TABLE usertable (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    backup_code VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE tasks ( 
+    id INT PRIMARY KEY AUTO_INCREMENT, 
+    description VARCHAR(100) NOT NULL,
+    due_date DATETIME,
+    status tinyint(1) DEFAULT 0,
+    important BOOLEAN DEFAULT 0,
+    id_user INT,
+    FOREIGN KEY (id_user) REFERENCES usertable(user_id) ON DELETE CASCADE 
+);
