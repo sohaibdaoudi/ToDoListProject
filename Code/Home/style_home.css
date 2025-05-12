@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+  background: #e1ecf2;
+}
+.container{
+  margin: 10px;
+}
+.container .navbar{
+  width: calc(100% - 20px);
+  height: 60px;
+  display: flex;
+  position: fixed;
+  top: 10px;
+  z-index: 1;
+}
+
+.container .navbar .icon_sidebar{
+  width: 70px;
+  height: 100%;
+  background: #267FFF;
+  padding: 15px 17px;
+  border-top-left-radius: 20px;
+  cursor: pointer;
+}
+
+.container .navbar .icon_sidebar:hover{
+  background: #4c96ff;
+}
+
+.container .navbar .icon_sidebar div{
+  width: 35px;
+  height: 4px;
+  background: white;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.container .navbar .welcome{
+  width: calc(100% - 70px);
+  height: 100%;
+  background: #fff;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.container .navbar .welcome .logo{
+  display:flex;
+  align-items:center;
+}
+
+.container .navbar .welcome .logo p {
+  color: #267FFF;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.container .navbar .welcome .logo img{
+  width:4.5em;
+}
+
+.container .navbar .welcome ul{
+  display: flex;
+  align-items:center;
+}
+
+.container .navbar .welcome ul p{
+  color: #267FFF;
+  font-size: 18px;
+}
+.container .navbar .welcome ul li a{
+  display: block;
+  margin: 0 10px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #267FFF;
+  border-radius: 50%;
+  color: #267FFF;
+}
+
+.container .navbar .welcome ul li a:hover{
+  background: #267FFF;
+  color: #fff;
+}
+
+.container .navbar .welcome ul li a:hover i{
+  color: #fff;
+}
+
+.container .sidebar{
+  position: fixed;
+  top: 70px;
+  left: 10px;
+  background: #267FFF;
+  width: 200px;
+  height: calc(100% - 80px);
+  border-bottom-left-radius: 20px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.container .sidebar ul li a{
+    display: block;
+    padding: 20px;
+    color: white;
+    position: relative;
+    margin-bottom: 1px;
+    white-space: nowrap;
+}
+
+
+.container .sidebar ul li a:before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: white;
+  display: none;
+}
+
+.container .sidebar ul li a span.icon{
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.container .sidebar ul li a span.title{
+  display: inline-block;
+}
+
+.container .sidebar ul li a:hover{
+  background: #4c96ff;
+  color: #fff;
+}
+
+.container .sidebar ul li a:hover:before{
+  display: block;
+}
+
+.container .main_container{
+  width: (100% - 200px);
+  margin-top: 70px;
+  margin-left: 205px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+
+.container.collapse .sidebar{
+  width: 70px;
+}
+
+.container.collapse .sidebar ul li a{
+  text-align: center; 
+}
+
+.container.collapse .sidebar ul li a span.icon{
+  margin: 0;
+}
+
+.container.collapse .sidebar ul li a span.title{
+  display: none;
+}
+
+.container.collapse .main_container{
+  width: (100% - 70px);
+  margin-left: 70px;
+}
+
+
+/* style time and first line */
+.main_container .time,.main_container .date {
+  color: gray;
+  margin:0;
+}
+
+.main_container .date{
+  font-size:20px
+}
+
+.line {
+  border-bottom: 1px solid rgba(125, 125, 125,0.4);
+  margin-bottom: 15px;
+  margin-top: 3px;
+  width: 100%;
+}
+
+
+
+/* this is for tasks input */
+.main_container .task_input {
+  display: flex;
+  align-items:center;
+  justify-content:space-between;
+
+}
+
+.main_container .task_input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline:none;
+  background:white;
+  font-size: 16px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.main_container .task_input button {
+  background: #267FFF;
+  color:white;
+  padding:10px ;
+  border:none;
+  width: 100px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+.main_container .task_input button:hover {
+  background-color: #0056b3;
+}
+
+.main_container .time_data{
+  padding: 5px 10px;
+  background-color: #FAF9F8;
+  border-top: 1px solid #EDEBEA;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#taskDate,
+#taskTime {
+    flex: 1;
+    padding: 8px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+#taskDate:focus,
+#taskTime:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+
+.main_container .task_list .task {
+  background: #fff;
+  padding-left:15px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+
+.main_container .task_list .task button {
+  background: none;
+  border: none;
+  padding: 12px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: -3px;
+}
+
+
+.main_container .task_list .task button.complete {
+  background: #28a745;
+  color: white;
+}
+
+.main_container .task_list .task button.complete:hover {
+  background: #218838;
+}
+
+.main_container .task_list .task button.dismiss {
+  background: #dc3545;
+  color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.main_container .task_list .task button.dismiss:hover {
+  background: #c82333;
+}
+
+.main_container .task_list .task.completed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
+.main_container .task_list .task.dismissed {
+  display: none; /* Hidden */
+}
+
+/* for the completed and dismissed lists */
+.main_container h3 {
+  margin-top: 20px;
+}
+
+
+.completed_list .task,
+.dismissed_list .task {
+  background: #fff;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.completed_list .task {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
+.collapsible {
+  cursor: pointer;
+  padding: 10px;
+  background: #ffffff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: 20px;
+  font-size: 16px;
+  transition: all 0.1s ease;
+}
+
+.collapsible:hover {
+  box-shadow: inset 0 0 0 0.5px #267FFF;
+ }
+
+.collapsible:after {
+  content: "▼";
+  float: right;
+  font-size: 12px;
+}
+
+.collapsible.active:after {
+  content: "▲";
+}
+
+.completed_list,
+.dismissed_list {
+  background: #FAF9F8;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; 
+  margin-top: 0;
+  padding: 10px;
+  min-height: 50px;
+  border-top: 1px solid #EDEBEA;
+  display: none; /* Initially hidden */
+}
+
+.completed_list .task,
+.dismissed_list .task {
+  background: #fff;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.completed_list .task {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+
+}
+
+
+.task-header{
+  display: flex;
+  align-items: center;
+}
+
+.important .task-header .star-button i{
+  font-weight: bolder;
+}
+
+
+
+
+
+
+
+/* Responsive tweaks for mobile and smaller devices */
+@media (max-width: 768px) {
+
+  .container .navbar .welcome {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .container .main_container {
+    margin-left: 105px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .container .navbar .welcome .logo p,
+  .container .navbar .welcome ul li:not(:last-child) {
+    display: none; /* Hide "Do It" and notification icon */
+  }
+
+  .container .navbar .welcome {
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+  }
+
+  .container .navbar .welcome ul {
+    gap: 8px;
+  }
+
+  /* Keep only the app logo and essential user-related icons */
+  .container .navbar .welcome ul li a {
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  
+
+  
+  .container .sidebar ul li a span.icon{
+    margin-right: 10px;
+    display: inline-block;
+  }
+  
+  .container .sidebar ul li a:hover{
+    background: #4c96ff;
+    color: #fff;
+  }
+
+
+}
+
+
+/* for task width each width*/
+
+/* 425px for mobiles*/
+@media (max-width: 426px){
+  .container .main_container {
+    margin-left: 0;
+    padding: 10px;
+}
+
+  .main_container .task_list .task button {
+    padding: 12px 5px;
+}
+
+.sidebar{
+  display: block;
+}
+
+.container .sidebar{
+  position: fixed;
+  top: 70px;
+  left: 10px;
+  background: #267FFF;
+  width: 200px;
+  height: calc(100% - 80px);
+  border-bottom-left-radius: 20px;
+  transition: none;
+}
+
+.container.collapse .sidebar{
+  display: none;
+}
+
+.container.collapse .main_container {
+  width: (100% - 70px);
+  margin-left: 0px;
+}
+}
+
+
+/*make button smaller*/
+@media (max-width: 375px){
+  .main_container .task_list .task button {
+    padding: 12px 2px;
+}
+}
+@media (max-width: 375px){
+  .main_container .task_list .task button {
+    padding: 12px 2px;
+}
+}
+
+
+/* for date and time it will not be displayed */
+
+@media (max-width: 511px) {
+  .task_list .task > p{
+    display: none;
+  }
+}
+
